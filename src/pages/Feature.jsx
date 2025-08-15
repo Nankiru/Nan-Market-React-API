@@ -1,12 +1,15 @@
 import FeatureImage from "../assets/images/features.png";
 import MokupImage from "../assets/images/mokup.png";
+import { useState, useEffect } from "react";
 
 const Feature = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
     <div>
       <>
         {/* Features */}
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className="max-w-[85rem] py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Tab Nav */}
           <nav
             className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-y-px sm:gap-y-0 sm:gap-x-4"
@@ -16,7 +19,7 @@ const Feature = () => {
           >
             <button
               type="button"
-              className="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100  p-3 md:p-5 rounded-xl bg-white/60 backdrop-blur-md shadow-md active"
+              className="rotate-none md:hover:scale-y-110 hover:transition-all duration-300 hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100  p-3 md:p-5 rounded-xl bg-white/60 backdrop-blur-md shadow-md active"
               id="tabs-with-card-item-1"
               aria-selected="true"
               data-hs-tab="#tabs-with-card-1"
@@ -42,17 +45,17 @@ const Feature = () => {
                 <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
               </svg>
               <span className="sm:mt-5">
-                <span className="hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">
+                <span className=" block font-semibold text-orange-500 ">
                   All-in-one workspace
                 </span>
-                <span className="hidden lg:block mt-2 text-gray-800 dark:text-neutral-200">
+                <span className="hidden lg:block mt-2 text-orange-400 ">
                   Create a business, whether you’ve got a fresh idea.
                 </span>
               </span>
             </button>
             <button
               type="button"
-              className="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              className="rotate-none md:hover:scale-y-110 hover:transition-all duration-300 hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100 p-3 md:p-5 rounded-xl bg-white/60 backdrop-blur-md shadow-md"
               id="tabs-with-card-item-2"
               aria-selected="false"
               data-hs-tab="#tabs-with-card-2"
@@ -60,7 +63,7 @@ const Feature = () => {
               role="tab"
             >
               <svg
-                className="shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-white"
+                className="shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-blue-800 "
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
                 height={24}
@@ -75,10 +78,10 @@ const Feature = () => {
                 <path d="M3.34 19a10 10 0 1 1 17.32 0" />
               </svg>
               <span className="sm:mt-5">
-                <span className="hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">
+                <span className="hs-tab-active:text-blue-600 block font-semibold text-blue-500">
                   Automation on a whole new level
                 </span>
-                <span className="hidden lg:block mt-2 text-gray-800 dark:text-neutral-200">
+                <span className="hidden lg:block mt-2 text-blue-400 ">
                   Use automation to scale campaigns profitably and save time
                   doing it.
                 </span>
@@ -86,7 +89,7 @@ const Feature = () => {
             </button>
             <button
               type="button"
-              className="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+              className="rotate-none md:hover:scale-y-110 hover:transition-all duration-300 hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start  p-3 md:p-5 rounded-xl bg-white/60 backdrop-blur-md shadow-md"
               id="tabs-with-card-item-3"
               aria-selected="false"
               data-hs-tab="#tabs-with-card-3"
@@ -94,7 +97,7 @@ const Feature = () => {
               role="tab"
             >
               <svg
-                className="shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-white"
+                className="shrink-0 hidden sm:block size-7 hs-tab-active:text-blue-600 text-purple-800 "
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
                 height={24}
@@ -112,10 +115,10 @@ const Feature = () => {
                 <path d="M17 19h4" />
               </svg>
               <span className="sm:mt-5">
-                <span className="hs-tab-active:text-blue-600 block font-semibold text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">
+                <span className="hs-tab-active:text-blue-600 block font-semibold text-purple-500 ">
                   Solving problems for every team
                 </span>
-                <span className="hidden lg:block mt-2 text-gray-800 dark:text-neutral-200">
+                <span className="hidden lg:block text-purple-400">
                   One tool for your company to share knowledge and ship
                   projects.
                 </span>
@@ -145,14 +148,23 @@ const Feature = () => {
                 {/* End Mobile Device */}
                 {/* Browser Device */}
                 <figure className="ms-auto me-20 relative z-1 max-w-full w-3xl h-auto shadow-[0_2.75rem_3.5rem_-2rem_rgb(45_55_75_/_20%),_0_0_5rem_-2rem_rgb(45_55_75_/_15%)] dark:shadow-[0_2.75rem_3.5rem_-2rem_rgb(0_0_0_/_20%),_0_0_5rem_-2rem_rgb(0_0_0_/_15%)] rounded-b-lg">
-                  <div className="relative flex items-center max-w-3xl bg-white border-b border-gray-100 rounded-t-lg py-2 px-24 dark:bg-neutral-800 dark:border-neutral-700">
-                    <div className="flex gap-x-1 absolute top-2/4 start-4 -translate-y-1">
-                      <span className="size-2 bg-gray-200 rounded-full dark:bg-neutral-700" />
-                      <span className="size-2 bg-gray-200 rounded-full dark:bg-neutral-700" />
-                      <span className="size-2 bg-gray-200 rounded-full dark:bg-neutral-700" />
+                  <div className="relative flex items-center max-w-3xl border-b rounded-t-lg py-2 px-24 bg-neutral-800 border-neutral-700">
+                    <div className="flex gap-x-2 absolute top-2/4 start-4 -translate-y-1">
+                      <span
+                        className="size-3 animate-bounce bg-red-500 rounded-full shadow-md"
+                        style={{ animationDelay: "0s" }}
+                      />
+                      <span
+                        className="size-3 animate-bounce bg-green-500 rounded-full shadow-md"
+                        style={{ animationDelay: "0.2s" }}
+                      />
+                      <span
+                        className="size-3 animate-bounce bg-blue-500 rounded-full shadow-md"
+                        style={{ animationDelay: "0.4s" }}
+                      />
                     </div>
-                    <div className="flex justify-center items-center size-full bg-gray-200 text-[.25rem] text-gray-800 rounded-sm sm:text-[.5rem] dark:bg-neutral-700 dark:text-neutral-200">
-                      www.nanmarket.com
+                    <div className="flex justify-center items-center size-full bg-gray-200 text-[.25rem] text-gray-800 rounded-sm sm:text-[.5rem]">
+                      https://nan-market.vercel.app
                     </div>
                   </div>
                   <div className="bg-gray-800 rounded-b-lg">
@@ -232,13 +244,13 @@ const Feature = () => {
                 {/* Browser Device */}
                 <figure className="ms-auto me-20 relative z-1 max-w-full w-3xl h-auto shadow-[0_2.75rem_3.5rem_-2rem_rgb(45_55_75_/_20%),_0_0_5rem_-2rem_rgb(45_55_75_/_15%)] dark:shadow-[0_2.75rem_3.5rem_-2rem_rgb(0_0_0_/_20%),_0_0_5rem_-2rem_rgb(0_0_0_/_15%)] rounded-b-lg">
                   <div className="relative flex items-center max-w-3xl bg-white border-b border-gray-100 rounded-t-lg py-2 px-24 dark:bg-neutral-800 dark:border-neutral-700">
-                    <div className="flex gap-x-1 absolute top-2/4 start-4 -translate-y-1">
-                      <span className="size-2 bg-gray-200 rounded-full dark:bg-neutral-700" />
-                      <span className="size-2 bg-gray-200 rounded-full dark:bg-neutral-700" />
-                      <span className="size-2 bg-gray-200 rounded-full dark:bg-neutral-700" />
+                    <div className="flex gap-x-2 absolute top-2/4 start-4 -translate-y-1">
+                      <span className="size-3 bg-gray-200 rounded-full dark:bg-neutral-700" />
+                      <span className="size-3 bg-gray-200 rounded-full dark:bg-neutral-700" />
+                      <span className="size-3 bg-gray-200 rounded-full dark:bg-neutral-700" />
                     </div>
                     <div className="flex justify-center items-center size-full bg-gray-200 text-[.25rem] text-gray-800 rounded-sm sm:text-[.5rem] dark:bg-neutral-700 dark:text-neutral-200">
-                      www.preline.co
+                      https://nan-market.vercel.app/
                     </div>
                   </div>
                   <div className="bg-gray-800 rounded-b-lg">

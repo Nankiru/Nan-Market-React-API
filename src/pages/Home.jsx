@@ -1,5 +1,4 @@
 import { getProducts } from "../api/product";
-import Logo from "../assets/react.svg";
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import "../assets/css/font.css";
@@ -166,7 +165,7 @@ const ProductList = () => {
           <h1 className="text-4xl font-bold text-center font-Suwannaphum mb-12 bg-gradient-to-r from-[#d946ef] to-[#f0abfc]  bg-clip-text text-transparent ">
             All Products
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
             {products.map((pro) => (
               <a
                 href={pro.id}
@@ -181,7 +180,8 @@ const ProductList = () => {
                   <img
                     src={Array.isArray(pro.images) ? pro.images[0] : pro.images}
                     alt={pro.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110 border border-gray-200"
+                    style={{ background: '#f3f4f6' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute top-4 right-4">
@@ -190,12 +190,12 @@ const ProductList = () => {
                     </button>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300 flex items-center justify-center gap-2">
+                    {/* <button className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors duration-300 flex items-center justify-center gap-2">
                       <i className="fas fa-shopping-cart" /> Add to Cart
-                    </button>
+                    </button> */}
                   </div>
                   <span className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse-slow">
-                    NEW
+                    In Stock
                   </span>
                 </div>
                 <div className="p-5">

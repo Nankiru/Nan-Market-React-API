@@ -65,7 +65,7 @@ const Detail = () => {
         </div>
         <div className="md:w-1/2 p-8 flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2 truncate">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2 ">
               {product.title}
             </h2>
             <p className="text-gray-500 mb-4 line-clamp-3">
@@ -118,8 +118,8 @@ const Detail = () => {
               <div className="text-gray-500 text-xs">
                 Rating : ({product.rating} reviews)
               </div>
-            <div className="text-xs text-gray-400 mb-2">
-              {product.brand ? <span>{product.brand}</span> : <span>Unknown Brand</span>}
+            <div className="text-xs text-gray-400 my-2">
+              {product.brand ? <span>Brand <span className="font-medium bg-purple-500 rounded-xl px-4 py-[1.4px] text-white">{product.brand}</span></span> : <span></span>}
             </div>
             <div className="text-xs text-gray-400 mb-2">
               Category: <span className="bg-green-500 rounded-xl px-4 py-[1.7px] text-white">{product.category}</span>
